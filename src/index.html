@@ -7,11 +7,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="">
-    <div class="w-11/12 mx-auto px-3">
+    <div class="md:w-11/12 mx-auto md:px-3">
         <header class="flex py-8 items-center justify-between">
             <div class="flex  items-center space-x-40">
                 <p class="text-2xl font-bold">RealEstate</p>
-                <div class="text-sm space-x-14">
+                <div class="text-sm space-x-14 hidden md:flex">
                     <a class="text-blue-600 border-b-2 border-blue-600 pb-1">Search</a>
                     <a class="text-gray-600" href="">About</a>
                     <a class="text-gray-600" href="">Help</a>
@@ -19,7 +19,10 @@
                     <a class="text-gray-600" href="">Blog</a>
                 </div>
             </div>
-            <div class="flex items-center space-x-12">
+            <div class="flex items-center space-x-3 md:space-x-12">
+                <button class="md:hidden">
+                    <i class="fas fa-bars  text-gray-400"></i>
+                </button>
                 <button>
                     <i class="fas fa-heart text-gray-400"></i>
                 </button>
@@ -27,7 +30,7 @@
             </div>
         </header>
 
-        <div class="flex items-center justify-between">
+        <div class="md:flex items-center justify-between hidden">
             <div class="flex items-center p-2 py-3 bg-[#f3f3f3] rounded-xl text-gray-500">
                 <i class="fas fa-search"></i>
                 <input type="text" class="bg-transparent focus:outline-none px-3 text-sm" placeholder="Enter an Address, city or Zip code">
@@ -71,10 +74,55 @@
 
         </div>
 
-        <div class="mt-10 grid grid-cols-2 gap-10">
+        <button  onclick="document.getElementById('test').classList.toggle('hidden')" class="bg-gray-300 md:hidden px-4 py-2 rounded  ml-2 text-xl"><i class="fas fa-filter"></i></button>
+
+        <div id="test" class="hidden z-50 fixed w-full grid grid-cols-1 gap-3 h-screen bg-white top-0">
+            <div class="flex items-center p-2 py-3 bg-[#f3f3f3] rounded-xl text-gray-500">
+                <i class="fas fa-search"></i>
+                <input type="text" class="bg-transparent focus:outline-none px-3 text-sm" placeholder="Enter an Address, city or Zip code">
+            </div>
+            <div class="flex items-center p-2 py-3 bg-[#f3f3f3] rounded-xl text-gray-700 font-bold">
+                <select name="" id="" class="bg-transparent focus:outline-none px-3 text-xs">
+                    <option value="">For Sale</option>
+                </select>
+            </div>
+
+            <div class="flex items-center p-2 py-3 bg-[#f3f3f3] rounded-xl text-gray-700 font-bold">
+                <select name="" id="" class="bg-transparent focus:outline-none px-3 text-xs">
+                    <option value="">Type: House</option>
+                </select>
+            </div>
+
+            <div class="flex items-center p-2 py-3 bg-[#f3f3f3] rounded-xl text-gray-700 font-bold">
+                <select name="" id="" class="bg-transparent focus:outline-none px-3 text-xs">
+                    <option value="">Min Price: $500k</option>
+                </select>
+            </div>
+
+            <div class="flex items-center p-2 py-3 bg-[#f3f3f3] rounded-xl text-gray-700 font-bold">
+                <select name="" id="" class="bg-transparent focus:outline-none px-3 text-xs">
+                    <option value="">Max Price: $500k</option>
+                </select>
+            </div>
+
+            <div class="flex items-center p-2 py-3 bg-[#f3f3f3] rounded-xl text-gray-700 font-bold">
+                <select name="" id="" class="bg-transparent focus:outline-none px-3 text-xs">
+                    <option value="">Floor area: 60m</option>
+                </select>
+            </div>
+
+            <div class="flex items-center p-4 py-2 bg-[#f3f3f3] rounded-xl text-gray-500">
+                <button>
+                    <i class="fas fa-cog"></i>
+                    more
+                </button>
+            </div>
+        </div>
+
+        <div class="mt-10 grid md:grid-cols-2 gap-0 md:gap-10">
             <div class="p-2 pb-10">
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="h-72 bg-white shadow-xl rounded-3xl overflow-hidden relative">
+                <div class="grid grid-cols-2 gap-y-10 gap-x-4 md:gap-4">
+                    <div class="h-96 md:h-72  md:bg-white shadow-xl rounded-3xl overflow-hidden relative">
                         <img src="https://images.adsttc.com/media/images/5ecd/d4ac/b357/65c6/7300/009d/large_jpg/02C.jpg?1590547607" class="h-3/6 rounded-3xl w-full object-cover" alt="">
                         <div class="w-full flex justify-between px-3 absolute top-3 items-center">
                             <div class="space-x-1 text-white text-[9px]">
@@ -106,7 +154,7 @@
                         </div> 
                     </div>
 
-                    <div class="h-72 bg-white shadow-xl rounded-3xl overflow-hidden relative">
+                    <div class="h-96 md:h-72 bg-white shadow-xl rounded-3xl overflow-hidden relative">
                         <img src="https://images.adsttc.com/media/images/531d/2ee2/c07a/8068/8c00/0298/large_jpg/02.jpg?1394421462" class="h-3/6 rounded-3xl w-full object-cover" alt="">
                         <div class="w-full flex justify-between px-3 absolute top-3 items-center">
                             <div class="space-x-1 text-white text-[9px]">
@@ -209,7 +257,7 @@
                     <button class="px-3 mt-4  py-2 rounded-xl text-sm font-bold bg-gray-200/80 text-black">... 15 more</button>
                 </div>
             </div>
-            <div class="p-2 rounded-xl overflow-hidden h-[610px]">
+            <div class="p-2 rounded-xl overflow-hidden h-72 md:h-[610px]">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d51910.270271623485!2d45.32680034637452!3d35.59339850676267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2siq!4v1667652067234!5m2!1sen!2siq" class="w-full h-full rounded-xl" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
